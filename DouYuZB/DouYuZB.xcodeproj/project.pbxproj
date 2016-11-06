@@ -18,6 +18,10 @@
 		6BDA379A1DCF3BFA0048BE82 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDA37991DCF3BFA0048BE82 /* Live.storyboard */; };
 		6BDA379C1DCF3C030048BE82 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDA379B1DCF3C020048BE82 /* Follow.storyboard */; };
 		6BDA379E1DCF3C0A0048BE82 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BDA379D1DCF3C0A0048BE82 /* My.storyboard */; };
+		6BDA37A01DCF3D480048BE82 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA379F1DCF3D480048BE82 /* HomeViewController.swift */; };
+		6BDA37A31DCF43350048BE82 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA37A21DCF43350048BE82 /* UIBarButtonItem+Extension.swift */; };
+		6BDA37A51DCF58A50048BE82 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA37A41DCF58A50048BE82 /* PageTitleView.swift */; };
+		6BDA37A71DCF5AA00048BE82 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDA37A61DCF5AA00048BE82 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		6BDA37991DCF3BFA0048BE82 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		6BDA379B1DCF3C020048BE82 /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
 		6BDA379D1DCF3C0A0048BE82 /* My.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
+		6BDA379F1DCF3D480048BE82 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6BDA37A21DCF43350048BE82 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		6BDA37A41DCF58A50048BE82 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		6BDA37A61DCF5AA00048BE82 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +206,8 @@
 		6BDA37751DCEDA8D0048BE82 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				6BDA37A11DCF42CC0048BE82 /* Extensions */,
+				6BDA37A61DCF5AA00048BE82 /* Common.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -206,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				6BDA37971DCF3BF20048BE82 /* Home.storyboard */,
+				6BDA379F1DCF3D480048BE82 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,8 +320,17 @@
 		6BDA37921DCF3B450048BE82 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6BDA37A41DCF58A50048BE82 /* PageTitleView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6BDA37A11DCF42CC0048BE82 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BDA37A21DCF43350048BE82 /* UIBarButtonItem+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,8 +471,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BDA37A31DCF43350048BE82 /* UIBarButtonItem+Extension.swift in Sources */,
 				6BDA37961DCF3BE30048BE82 /* MainViewController.swift in Sources */,
+				6BDA37A51DCF58A50048BE82 /* PageTitleView.swift in Sources */,
 				6B8B50171DCE2DC60005E162 /* AppDelegate.swift in Sources */,
+				6BDA37A71DCF5AA00048BE82 /* Common.swift in Sources */,
+				6BDA37A01DCF3D480048BE82 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
