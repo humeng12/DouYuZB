@@ -12,26 +12,26 @@ private let scrollLineH : CGFloat = 2
 
 class PageTitleView: UIView {
     
-    private var titles:[String]
+    fileprivate var titles:[String]
     
-    private lazy var titleLabels : [UILabel] = [UILabel]()
+    fileprivate lazy var titleLabels : [UILabel] = [UILabel]()
     
-    private lazy var scrollView : UIScrollView = {
+    fileprivate lazy var scrollView : UIScrollView = {
         
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.scrollsToTop = false
-        scrollView.pagingEnabled = false
+        scrollView.isPagingEnabled = false
         scrollView.bounces = false
         
         return scrollView
     }()
     
     
-    private lazy var scrollLine : UIView = {
+    fileprivate lazy var scrollLine : UIView = {
     
         let scrollLine = UIView()
-        scrollLine.backgroundColor = UIColor.orangeColor()
+        scrollLine.backgroundColor = UIColor.orange
         
         return scrollLine
     }()
@@ -52,7 +52,7 @@ class PageTitleView: UIView {
 
 extension PageTitleView {
 
-    private func setupUI() {
+    fileprivate func setupUI() {
         addSubview(scrollView)
         scrollView.frame = bounds
         
@@ -61,21 +61,21 @@ extension PageTitleView {
         setupBottomMenuAndScrollLine()
     }
     
-    private func setupTitleLabels() {
+    fileprivate func setupTitleLabels() {
         
         let labelW : CGFloat = frame.width / (CGFloat)(titles.count)
         let labelH : CGFloat = frame.height - scrollLineH
         let labelY : CGFloat = 0
         
-        for (index,title) in titles.enumerate() {
+        for (index,title) in titles.enumerated() {
         
             let label = UILabel()
             
             label.text = title;
             label.tag = index
-            label.font = UIFont.systemFontOfSize(16)
-            label.textColor = UIColor.grayColor()
-            label.textAlignment = .Center
+            label.font = UIFont.systemFont(ofSize: 16)
+            label.textColor = UIColor.gray
+            label.textAlignment = .center
             
             let labelX : CGFloat = labelW * (CGFloat)(index)
             label.frame = CGRect(x: labelX, y: labelY, width: labelW, height: labelH)
@@ -85,11 +85,11 @@ extension PageTitleView {
         }
     }
     
-    private func setupBottomMenuAndScrollLine() {
+    fileprivate func setupBottomMenuAndScrollLine() {
         
         //添加底线
         let bottomLine = UIView()
-        bottomLine.backgroundColor = UIColor.lightGrayColor()
+        bottomLine.backgroundColor = UIColor.lightGray
         
         let lineH : CGFloat = 0.5
         bottomLine.frame = CGRect(x: 0, y: 0, width:frame.height - lineH , height: lineH)
@@ -97,7 +97,7 @@ extension PageTitleView {
         
         //添加scrollLine
         guard let firstLabel = titleLabels.first else {return}
-        firstLabel.textColor = UIColor.orangeColor()
+        firstLabel.textColor = UIColor.orange
         scrollView.addSubview(scrollLine)
         
         scrollLine.frame = CGRect(x: firstLabel.frame.origin.x, y: frame.height - scrollLineH, width: firstLabel.frame.width, height: scrollLineH)

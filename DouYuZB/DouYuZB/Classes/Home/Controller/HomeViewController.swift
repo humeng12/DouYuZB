@@ -13,7 +13,7 @@ private let kTitleViewH : CGFloat = 40
 class HomeViewController: UIViewController {
     
     
-    private lazy var pageTitleView:PageTitleView = {
+    fileprivate lazy var pageTitleView:PageTitleView = {
         let titleFrame = CGRect(x: 0, y: kStatusBarH + kNavgationBarH, width: kScreenW, height: kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
     
-    private func setupUI() {
+    fileprivate func setupUI() {
         
         automaticallyAdjustsScrollViewInsets = false
         
@@ -46,7 +46,7 @@ extension HomeViewController {
         view.addSubview(pageTitleView)
     }
     
-    private func setupNavgationBar() {
+    fileprivate func setupNavgationBar() {
     
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo")
         

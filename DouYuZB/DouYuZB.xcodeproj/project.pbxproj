@@ -402,15 +402,18 @@
 					6B8B50121DCE2DC60005E162 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 75AXUYD58X;
+						LastSwiftMigration = 0810;
 					};
 					6B8B50261DCE2DC60005E162 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 75AXUYD58X;
+						LastSwiftMigration = 0810;
 						TestTargetID = 6B8B50121DCE2DC60005E162;
 					};
 					6B8B50311DCE2DC60005E162 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 75AXUYD58X;
+						LastSwiftMigration = 0810;
 						TestTargetID = 6B8B50121DCE2DC60005E162;
 					};
 				};
@@ -616,6 +619,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HM.DouYuZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -629,6 +633,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HM.DouYuZB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -640,6 +645,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HM.DouYuZBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DouYuZB.app/DouYuZB";
 			};
 			name = Debug;
@@ -652,6 +658,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HM.DouYuZBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DouYuZB.app/DouYuZB";
 			};
 			name = Release;
@@ -663,6 +670,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HM.DouYuZBUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DouYuZB;
 				USES_XCTRUNNER = YES;
 			};
@@ -675,6 +683,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HM.DouYuZBUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = DouYuZB;
 				USES_XCTRUNNER = YES;
 			};
