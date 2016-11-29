@@ -10,6 +10,7 @@ import UIKit
 
 extension UIBarButtonItem {
 
+    //加class扩展类方法
     class func createItem(_ imageName:String,highImageName:String,size:CGSize) -> UIBarButtonItem{
         
         let btn = UIButton()
@@ -22,7 +23,7 @@ extension UIBarButtonItem {
         return UIBarButtonItem(customView: btn)
     }
     
-    
+    //便利构造函数 1 convenience开头 2 在构造函数中必须明确调用一个设计的构造函数(self调用)
     convenience init(imageName: String,highImageName: String = "",size: CGSize = CGSize.zero) {
       
         let btn = UIButton()
