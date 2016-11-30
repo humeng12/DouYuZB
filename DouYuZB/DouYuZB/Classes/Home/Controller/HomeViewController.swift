@@ -44,6 +44,7 @@ class HomeViewController: UIViewController {
 
         //设置ui界面
         setupUI()
+        
     }
 
     override func didReceiveMemoryWarning() {
