@@ -10,6 +10,8 @@ import UIKit
 
 class RecommendViewModel {
     
+    lazy var cycleModels : [CycleModel] = [CycleModel]()
+    
     lazy var anchorGroups : [AnchorGroup] = [AnchorGroup]()
     
     fileprivate lazy var prettyGroup : AnchorGroup = AnchorGroup()
@@ -106,5 +108,29 @@ extension RecommendViewModel {
             finishCallback()
         }
         
+    }
+    
+    
+    func requestCycleData(_ finishCallback :@escaping () ->()) {
+        
+        let parameters = ["version" : "2.300"]
+        
+        NetworkTools.requestData(.get, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: parameters) {(result) in
+            
+            
+            // 1.获取整体字典数据
+            guard let resultDict = result as? [String : NSObject] else { return }
+            
+            // 2.根据data的key获取数据
+            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else { return }
+            
+            // 3.字典转模型对象
+            for dict in dataArray {
+                self.cycleModels.append(CycleModel(dict: dict))
+            }
+            
+            
+            finishCallback()
+        }
     }
 }
