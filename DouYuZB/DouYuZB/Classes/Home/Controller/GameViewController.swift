@@ -13,7 +13,6 @@ private let kItemW : CGFloat = (kScreenW - 2*kEdgeMargin) / 3
 private let kItemH : CGFloat = kItemW * 6 / 5
 
 private let kHeaderViewH : CGFloat = 50
-private let kGameViewH : CGFloat = 90
 
 private let kGameCellID = "kGameCellID"
 private let kHeaderViewID = "kHeaderViewID"
