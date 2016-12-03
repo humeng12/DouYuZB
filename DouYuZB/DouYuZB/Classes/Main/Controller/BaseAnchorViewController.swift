@@ -91,7 +91,7 @@ extension BaseAnchorViewController {
 }
 
 
-extension BaseAnchorViewController : UICollectionViewDataSource,UICollectionViewDelegate {
+extension BaseAnchorViewController : UICollectionViewDataSource {
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -137,6 +137,33 @@ extension BaseAnchorViewController : UICollectionViewDataSource,UICollectionView
         headerView.group = baseVM.anchorGroups[indexPath.section]
         
         return headerView
+    }
+}
+
+
+
+extension BaseAnchorViewController : UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
+        
+        anchor.isVertical == 0 ? pushNomalRoomVC() : presentShowRoomVC()
+    }
+    
+    
+    fileprivate func presentShowRoomVC() {
+        
+        let showRoomVC = RoomShowViewController()
+        
+        present(showRoomVC, animated: true, completion:nil)
+    }
+    
+    
+    fileprivate func pushNomalRoomVC() {
+        
+        let nomalRoomVC = RoomNomalViewController()
+        navigationController?.pushViewController(nomalRoomVC, animated: true)
     }
 }
 
