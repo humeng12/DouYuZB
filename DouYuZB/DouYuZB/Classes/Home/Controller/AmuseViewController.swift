@@ -8,11 +8,19 @@
 
 import UIKit
 
+private let kMenuViewH : CGFloat = 200
 
 class AmuseViewController: BaseAnchorViewController {
     
     
     fileprivate lazy var amuseVM : AmuseViewModel = AmuseViewModel()
+    
+    fileprivate lazy var amuseView : AmuseMenuView = {
+        
+        let menuView = AmuseMenuView.amuseMenuView()
+        menuView.frame = CGRect(x: 0, y: -kMenuViewH, width: kScreenW, height: kMenuViewH)
+        return menuView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +35,19 @@ class AmuseViewController: BaseAnchorViewController {
 }
 
 
+
+extension AmuseViewController {
+
+    override func setupUI() {
+    
+        super.setupUI()
+        
+        collectionView.addSubview(amuseView)
+        collectionView.contentInset = UIEdgeInsets(top: kMenuViewH, left: 0, bottom: 0, right: 0)
+    }
+}
+
+
 extension AmuseViewController {
     
     override func loadData() {
@@ -36,6 +57,12 @@ extension AmuseViewController {
         amuseVM.loadAmuseData {
             
             self.collectionView.reloadData()
+            
+            var tempGroup = self.amuseVM.anchorGroups
+            tempGroup.removeFirst()
+            self.amuseView.groups = tempGroup
+            
+            self.loadDataFinished()
         }
     }
 }

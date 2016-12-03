@@ -22,7 +22,7 @@ private let kNormalCellID = "kNormalCellID"
 let kPrettyCellID = "kPrettyCellID"
 private let kHeaderViewID = "kHeaderViewID"
 
-class BaseAnchorViewController: UIViewController {
+class BaseAnchorViewController: BaseViewController {
     
      var baseVM : BaseViewModel!
     
@@ -72,9 +72,13 @@ class BaseAnchorViewController: UIViewController {
 
 extension BaseAnchorViewController {
     
-    func setupUI() {
+    override func setupUI() {
+        
+        contentView = collectionView
         
         view.addSubview(collectionView)
+        
+        super.setupUI()
     }
 }
 
@@ -91,10 +95,18 @@ extension BaseAnchorViewController : UICollectionViewDataSource,UICollectionView
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        if baseVM == nil {
+            return 1
+        }
         return baseVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if baseVM == nil {
+            return 10
+        }
         
         return baseVM.anchorGroups[section].anchors.count
     }
@@ -103,6 +115,10 @@ extension BaseAnchorViewController : UICollectionViewDataSource,UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "kNormalCellID", for: indexPath) as! CollectionNormalCell
+        
+        if baseVM == nil {
+            return cell
+        }
         
         cell.anchor = baseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
         
@@ -113,6 +129,10 @@ extension BaseAnchorViewController : UICollectionViewDataSource,UICollectionView
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
+        
+        if baseVM == nil {
+            return headerView
+        }
         
         headerView.group = baseVM.anchorGroups[indexPath.section]
         

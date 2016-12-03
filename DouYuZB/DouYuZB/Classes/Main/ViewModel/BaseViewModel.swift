@@ -16,7 +16,7 @@ class BaseViewModel {
 
 extension BaseViewModel {
 
-    func loadAnchorData(URLString : String,parameters:[String : Any]?=nil,finishedCallBack : @escaping () -> ()){
+    func loadAnchorData(isGroupData:Bool,URLString : String,parameters:[String : Any]?=nil,finishedCallBack : @escaping () -> ()){
     
         NetworkTools.requestData(.get, URLString: URLString,parameters: parameters) {(result) in
             
@@ -24,9 +24,21 @@ extension BaseViewModel {
             
             guard let dataArray = resultDict["data"] as? [[String : Any]] else {return}
             
-            for dict in dataArray {
+            
+            if isGroupData {
+                for dict in dataArray {
+                    
+                    self.anchorGroups.append(AnchorGroup(dict: dict as! [String : NSObject]))
+                }
+            } else {
                 
-                self.anchorGroups.append(AnchorGroup(dict: dict as! [String : NSObject]))
+                let group = AnchorGroup()
+                
+                for dict in dataArray {
+                    group.anchors.append(AnchorModel(dict: dict))
+                }
+                
+                self.anchorGroups.append(group)
             }
             
             finishedCallBack()
